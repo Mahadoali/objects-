@@ -130,12 +130,13 @@ function FeatureToggle(featureName, isEnabled, userGroupAccess) {
   //  then use prototypes to calculate an average score, classify performance level using control flow, and add new feedback based on conditions.
 
 
- function Employee(id, name, performanceMetrics, feedback) {
+ class Employee {
+  constructor(id, name, performanceMetrics, feedback){
     this.id = id;
     this.name = name;
     this.performanceMetrics = performanceMetrics;
     this.feedback = feedback;
-  }
+  }}
   
   Employee.prototype.averageScore = function() {
     const scores = Object.values(this.performanceMetrics);
@@ -175,11 +176,12 @@ function FeatureToggle(featureName, isEnabled, userGroupAccess) {
   //  use control flow to output different messages for instructors with more or less than 5 students.
 
 
-  function Course(title, instructor, students) {
+  class Course{
+    constructor(title, instructor, students) {
     this.title = title;
     this.instructor = instructor;
     this.students = students;
-  }
+  }}
   
   Course.prototype.completedStudents = function() {
     return this.students.filter(s => s.completionStatus).map(s => s.name);
